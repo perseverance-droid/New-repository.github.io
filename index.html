@@ -643,6 +643,182 @@
     color: #6c757d;                     /* 页脚文本颜色为浅灰色（十六进制色值#6c757d） */
     font-size: 0.9rem;                  /* 页脚字体大小0.9rem（相对单位，适配不同屏幕） */
 }
+/* ============ 移动端适配核心样式（768px以下屏幕） ============ */
+        @media (max-width: 768px) {
+            /* 1. 导航栏适配 */
+            .top-nav {
+                font-size: 16px; /* 缩小导航栏文字 */
+                padding: 8px 0;  /* 减少上下内边距 */
+                margin: 10px 5px;/* 减少外边距 */
+                border-radius: 10px;/* 缩小圆角 */
+            }
+            .nav-item {
+                padding: 8px 5px;/* 减少导航项内边距 */
+                gap: 4px;/* 缩小图标和文字间距 */
+            }
+            .nav-hover-img {
+                width: 200px;/* 缩小悬浮图片 */
+                top: 35px;/* 调整悬浮图片位置 */
+            }
+
+            /* 2. 头部区域适配 */
+            .header-logo {
+                width: 90%;/* logo宽度适配屏幕 */
+                max-width: 400px;/* 限制最大宽度 */
+            }
+            .cartoon-illust {
+                width: 95%;/* 插图宽度适配 */
+                max-width: none;/* 取消最大宽度限制 */
+            }
+
+            /* 3. 模块标题适配 */
+            .section-title {
+                font-size: 36px;/* 缩小标题字号 */
+                margin: 20px 0 15px;/* 减少上下间距 */
+                gap: 8px;/* 缩小横线和文字间距 */
+            }
+            .section-title::before,
+            .section-title::after {
+                width: 30px;/* 缩小横线宽度 */
+            }
+
+            /* 4. 卡片模块适配 */
+            .card-container {
+                width: 95%;/* 容器宽度适配 */
+                gap: 20px;/* 减少卡片间距 */
+                margin-bottom: 30px;/* 减少底部间距 */
+            }
+            .card {
+                flex-direction: column !important;/* 所有卡片改为垂直布局（覆盖偶数卡片的反向布局） */
+                padding: 15px;/* 减少内边距 */
+                gap: 15px;/* 减少图片和内容间距 */
+            }
+            .card-img {
+                width: 180px;/* 缩小卡片图片 */
+                height: 180px;
+            }
+            .card-title {
+                font-size: 20px;/* 缩小卡片标题 */
+                justify-content: center;/* 标题居中 */
+            }
+            .card-quote {
+                font-size: 16px;/* 缩小引用文本 */
+                text-align: center;/* 引用文本居中 */
+                padding-left: 0;/* 取消左侧内边距 */
+                border-left: none;/* 取消左侧边框 */
+                border-bottom: 2px solid currentColor;/* 改为底部边框 */
+                padding-bottom: 8px;/* 增加底部内边距 */
+            }
+            .card-desc {
+                font-size: 14px;/* 缩小描述文本 */
+                line-height: 1.6;/* 调整行高 */
+                text-align: left;/* 取消两端对齐，改为左对齐 */
+            }
+
+            /* 5. 关于我们模块适配 */
+            .about-section {
+                width: 95%;/* 宽度适配 */
+                padding: 30px 15px;/* 减少内边距 */
+                margin-bottom: 30px;/* 减少底部间距 */
+            }
+            .about-title {
+                font-size: 24px;/* 缩小标题 */
+                margin-bottom: 20px;/* 减少底部间距 */
+            }
+            .about-cards {
+                justify-content: center;/* 卡片容器居中 */
+                gap: 15px;/* 减少卡片间距 */
+            }
+            .about-card {
+                width: 100%;/* 卡片宽度适配 */
+                max-width: 280px;/* 限制最大宽度 */
+                margin: 0 auto;/* 居中显示 */
+            }
+            .butterfly {
+                width: 80px;/* 缩小蝴蝶装饰 */
+                right: 15px;/* 调整位置 */
+                bottom: 15px;
+            }
+
+            /* 6. 联系我们模块适配 */
+            .cont {
+                width: 95%;/* 宽度适配 */
+                margin-top: 80px;/* 减少顶部间距 */
+                padding: 20px 10px;/* 增加内边距（原代码没有，补充） */
+                gap: 15px;/* 减少子元素间距 */
+            }
+            .cont1, .cont2, .cont3, .cont4 {
+                display: none;/* 隐藏装饰图片（移动端显示效果差） */
+            }
+            .cont h1 {
+                font-size: 8vw;/* 调整标题字号 */
+                margin-top: 10px;/* 调整顶部间距 */
+            }
+            .cont p {
+                font-size: 14px;/* 缩小文本 */
+                padding: 0 10px;/* 增加左右内边距 */
+                text-align: center;/* 文本居中 */
+            }
+            .cont p:nth-of-type(4) {
+                margin-left: 5%;/* 减少左右外边距 */
+                margin-right: 5%;
+                font-size: 12px;/* 缩小补充说明文本 */
+            }
+            .contbottom {
+                flex-wrap: wrap;/* 按钮换行 */
+                gap: 15px;/* 减少按钮间距 */
+                margin-top: 10px;/* 减少顶部间距 */
+            }
+            .cont-qq, .cont-github, .cont-email {
+                width: 40%;/* 按钮宽度适配 */
+                max-width: 120px;/* 限制最大宽度 */
+                height: 45px;/* 增加按钮高度（方便点击） */
+                padding-top: 12px;/* 调整文本位置 */
+            }
+
+            /* 7. Q&A模块适配 */
+            .QandA {
+                width: 95%;/* 宽度适配 */
+                margin-top: 80px;/* 减少顶部间距 */
+                gap: 15px;/* 减少问答间距 */
+                padding-bottom: 10%;/* 增加底部内边距 */
+            }
+            .QandA h1 {
+                font-size: 7vw;/* 调整标题字号 */
+                text-align: center;/* 标题居中 */
+            }
+            .QandA details {
+                width: 95%;/* details宽度适配 */
+                font-size: 14px;/* 缩小字号 */
+            }
+            .QandA summary {
+                font-size: 15px;/* 缩小折叠标题 */
+                padding: 8px 0;/* 增加上下内边距（方便点击） */
+            }
+            .QandA summary:hover {
+                transform: scale(1.05) translateX(10px);/* 弱化悬浮效果 */
+            }
+            .answer {
+                margin-left: 5%;/* 减少左侧间距 */
+                padding: 10px;/* 增加内边距 */
+                font-size: 13px;/* 缩小回答文本 */
+            }
+
+            /* 8. 回到顶部按钮适配 */
+            .up {
+                width: 45px;/* 缩小按钮 */
+                height: 45px;
+                font-size: 20px;/* 缩小图标 */
+                bottom: 20px;/* 调整位置 */
+                right: 20px;
+            }
+
+            /* 9. 页脚适配 */
+            .footer {
+                padding: 15px;/* 减少内边距 */
+                font-size: 0.8rem;/* 缩小字号 */
+            }
+        }
     </style>
 
 </head>
@@ -936,7 +1112,4 @@
 <!-- 结束body标签（承接HTML文档的<body>开头） -->
 </body>
 <!-- 结束html标签（承接HTML文档的<html>开头） -->
-
 </html>
-
-
